@@ -1,0 +1,916 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html><head>
+
+<meta http-equiv="content-type" content="text/html" charset="ISO-8859-1"/>
+<meta charset="UTF-8">
+<meta name="description" content="OBAP Beach Chair Game">
+<meta name="keywords" content="obap, beach chair, game, peli, ambient, ambientti, lahti, art, video art, installaatio, luonto, nature, multimedia art, taide, video taide, multimedia taide, tunnelma, lahti, päijät-häme, multimedia, space, avaruus">
+
+<meta name="viewport" content="width=device-width, initial-scale=0">
+<meta name="robots" content="noodp,noydir" /> 
+
+<meta property="og:url" content="http://game.obap.info" />
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Find a Beach Chair Game by obap"/>
+<meta property="og:image" content="http://game.obap.info/FBsharePgame.png"/>
+<meta property="og:description" content="  "/>
+<meta data-react-helmet="true" property="og:site_name" content="http://game.obap.info"/>
+<meta data-react-helmet="true" property="fb:app_id" content="494488797890781"/>
+<link rel="icon" href="images/obap-weblogo-game-ico.png" type="image/png" sizes="64x64">
+
+<style>
+@font-face {
+  font-family: TFont;
+  src: url(Font/Suissnord.otf);
+}
+
+html { overflow:hidden; } 
+body {background-color:81badf } 
+
+#aboutObap {position:fixed; z-index: 17; overflow:hidden; top: 18px; left: 12px; height: 50px; width: 90px;}
+#FbShare {position:fixed; z-index: 18; overflow:hidden; top: 17px; left: 108px; height: 50px; width: 30px;}
+#Donate {position:fixed; z-index: 19; overflow:hidden; top: 2px; left: 143px; height: 60px; width: 30px;}
+
+#bcnayttamo {position:fixed; top:18px; margin-left: -390px; left: 50%; overflow:hidden; opacity: 1; width:780px; height:578px; z-index:20; background-color:#3F9; background:url(images/BGbeach.png); background-position: center; background-repeat: no-repeat; background-size: cover; }
+
+#bcylat{position: relative;top:8px; left:1px; opacity: 1; width:760px; height:21px; z-index:16; background-color:; background-position: center;}
+
+#BtInfoSound{position:relative; top:10px; left:645px; opacity: 1; width:150px; height:50px; z-index:28; background-color:;}
+
+#bcnapit{position: relative;top:25px; left:1px; opacity: 1; width:760px; height:60px; z-index:21; background-color:;}
+#bcBt{position: relative; top:3px; left:35px; opacity: 1; width:210px; height:40px; z-index:23; background-color:; }
+#bcBtt{position: relative; top:-35px; left:278px; opacity: 1; width:210px; height:40px; z-index:23; background-color:; }
+#bcBttt{position: relative; top:-75px; left:523px; opacity: 1; width:210px; height:40px; z-index:23; background-color:; }
+
+#GameTShow{position: relative; top: -70px; left:-264px; opacity: 1; width:200px; height:40px; z-index:23; visibility:visible; font:Arial, Helvetica, sans-serif; font-size:36px; }
+#GameTtShow{position:relative; top:150px; left:40px; opacity: 1;  text-align: right; width:60px; height:30px; z-index:23; visibility:visible; font:Arial, Helvetica, sans-serif; font-size:36px; }
+#GameTttShow{position: relative; top:120px; left:88px; opacity: 1; text-align: right; width:60px; height:30px; z-index:23; visibility:visible; font:Arial, Helvetica, sans-serif; font-size:36px; } 
+#GameTtttShow{position:relative; top:90px; left:150px; opacity: 1; text-align: right; width:30px; height:30px; z-index:28; visibility:visible; font:Arial, Helvetica, sans-serif; font-size:36px; }
+
+#bpelit{position: relative;top:45px; left:20px; opacity: 1; width:345px; height:345px; z-index:22; background-color:#06C; outline-width:7px;outline-style: solid; outline-color: #06C;border-color: yellow; }
+#bpelitt{position: relative;top:-300px; right:-415px; opacity: 1; width:345px; height:345px; z-index:22; background-color:#ff00ea;  outline-width:7px; outline-style: solid; outline-color: #ff00ea; border-color: yellow; }
+
+#obap {position:absolute; z-index: 26; overflow:hidden; font-family:Verdana; font-size: 7px; color:#FFF;  bottom: 10px; height: 40px; right: 3px; font-color: white;}
+
+   
+
+#img {height:15px;width: 20px;}
+
+#ResultBg{position: fixed; visibility:hidden; top:1px; left:1px; opacity: 0.6; width:100%; height:100%; z-index:24; background-color:#000; }
+#ResultT{position:fixed; visibility:hidden; top: 110px; margin-left: -160px; left: 50%; opacity: 1; width:320px; height:440px; z-index:25; font:Arial, Helvetica, sans-serif; font-size:36px; }
+#ResultTime {position: relative; visibility:hidden;; relative; top:-308px; left:35px; opacity: 1; width:250px; height:40px; z-index:26; font:Arial, Helvetica, sans-serif; font-size:36px; }
+
+#MailBg{position: fixed; visibility:hidden; top:1px; left:1px; opacity: 0.6; width:100%; height:100%; z-index:24; background-color:#000; }
+#MailSender{position:fixed;  visibility:hidden;  top: 110px; margin-left: -160px; left: 50%; opacity: 1; width:320px; height:440px; z-index:25; font:Arial, Helvetica, sans-serif; font-size:36px; background:url(images/TauluEmail.png);}
+#MailForm{position:fixed; visibility:hidden;  top: 120px; margin-left: -160px; left: 50%; opacity: 1; width:320px; height:430px; z-index:26; font-family: TFont; font-size:14px; }
+
+#InfoBg{position: fixed; visibility:hidden; top:1px; left:1px; opacity: 0.6; width:100%; height:100%; z-index:24; background-color:#000; }
+#InfoSender{position:fixed;  visibility:hidden;  top: 110px; margin-left: -160px; left: 50%; opacity: 1; width:320px; height:440px; z-index:25; font:Arial, Helvetica, sans-serif; font-size:36px; background:url(images/TauluGameInfo.png);}
+
+#cl {position:fixed; z-index: 22; opacity: 0.8; visibility:hidden; overflow:hidden; top: 10px; right: 0px; height: 40px; width: 30px; font-family:Verdana; font-size:28px; color:#FFF;}
+
+
+// best seen at 1500px or less
+
+html, body { height: 100%; }
+body {
+  background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #06C 100%);
+  overflow: hidden;
+}
+
+.ocean { 
+  height: 5%;
+  width:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background: #015871;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
+}
+View Compiled 
+Resources
+
+</style>
+<title>FIND A BEACHCHAIR</title>
+<script language="JavaScript" type="text/javascript">
+
+// Pelitaulujen luonti ja asetus arvoon 1
+
+var Pctaulu = new Array(10);
+Pctaulu[0] = new Array(10);
+Pctaulu[1]= new Array(10);
+Pctaulu[2]= new Array(10);
+Pctaulu[3]= new Array(10);
+Pctaulu[4]= new Array(10);
+Pctaulu[5]= new Array(10);
+Pctaulu[6]= new Array(10);
+Pctaulu[7]= new Array(10);
+Pctaulu[8]= new Array(10);
+Pctaulu[9]= new Array(10);
+
+var Omataulu = new Array(10);
+Omataulu[0] = new Array(10);
+Omataulu[1]= new Array(10);
+Omataulu[2]= new Array(10);
+Omataulu[3]= new Array(10);
+Omataulu[4]= new Array(10);
+Omataulu[5]= new Array(10);
+Omataulu[6]= new Array(10);
+Omataulu[7]= new Array(10);
+Omataulu[8]= new Array(10);
+Omataulu[9]= new Array(10);
+
+
+for (var q=0;q<10;q++)
+{  
+for (var qq=0;qq<10;qq++)
+{ 
+Pctaulu[q][qq] = "1";
+} 
+}
+
+for (var q=0;q<10;q++)
+{  
+for (var qq=0;qq<10;qq++)
+{ 
+Omataulu[q][qq] = "1";
+} 
+}
+
+// Pclaivat
+
+q=0
+aprr=0
+aprs=0
+aprrr=0
+aprrs=0
+
+var outt="k";
+var vaikeus=2;
+var ennatys=10000;
+var soo = 0;
+var moo = 0;
+var hoo = 0; 
+var ooooo = 0;
+var SleepVar;
+// Muuttujia
+var _listenerr = function() { asetusT(this); };
+var _listener = function() { peliT(this); };
+klik=1;
+asepal=1
+koko=0
+gameon=0
+rt=0
+rtt=0
+st=0
+stt=0
+rr=0
+rs=0
+PcO=0
+OmaO=0
+lr=0
+ls=0
+ee=0
+eee=0
+uu=3
+uuu=3
+voitto=""
+vuoro="ihm" // pelin vuoro muuttuja
+OmaO=0 //Omatosumat
+PcO=0 //Pcosumat
+lii=0
+level=0
+PalaY();
+function PalaY()
+{
+while (q<5)
+{ 
+aprr=parseInt(Math.random()*10)
+aprs=parseInt(Math.random()*10)
+
+if (Pctaulu[aprr][aprs] == "2"){lii=0}
+else {Pctaulu[aprr][aprs] = "2"; lii=1;
+
+
+oooo=1
+ooo=2
+for (pp=0;pp<ooo;pp++)
+{
+s=parseInt(Math.random()*10)
+
+if (s<5 && aprs<9){lr=0; ls=1;}
+	 			else if (s>4 && aprr<9){lr=1; ls=0;}
+
+	 					 else if (aprs>8 && s<5){lr=0; ls=-1;}
+						 			else if (aprr>8 && s>4){lr=-1; ls=0;}
+						 else {}; 
+				 	 					 
+aprrr= (aprr+lr);
+aprrs= (aprs+ls);
+
+if (Pctaulu[aprrr][aprrs]=="2"){ooo=ooo+1}
+else {Pctaulu[aprrr][aprrs]="2"; pp=ooo};
+}
+}
+q=q+lii;
+}
+}
+
+
+
+
+//UUSIALOTUS POHJUSTUS
+function Pohjust()
+{
+for (var q=0;q<10;q++)
+{  
+for (var qq=0;qq<10;qq++)
+{ 
+Pctaulu[q][qq] = "1";
+} 
+}
+
+for (var q=0;q<10;q++)
+{  
+for (var qq=0;qq<10;qq++)
+{ 
+Omataulu[q][qq] = "1";
+} 
+}
+
+
+//kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+
+
+  
+document.getElementById("ResultT").style.visibility = "hidden";
+document.getElementById("ResultBg").style.visibility = "hidden";
+document.getElementById("ResultTime").style.visibility = "hidden";
+//document.getElementById("GameTShow").innerHTML = "";
+document.getElementById("BtEasy").src="images/BtEasy.png";  
+document.getElementById("BtNormal").src="images/BtNormal.png";
+document.getElementById("BtHard").src="images/BtHard.png" ;
+PalaY();
+};
+
+/* function VTaso(idje)
+{var buttonii = idje.id;
+	if (buttoni=="BtEasy"){vaikeus=1; }; VTasoo( buttonii);
+	if (buttoni=="BtNormal"){vaikeus=4; }; VTasoo( buttonii);
+	if (buttoni=="BtHard"){vaikeus=9; }; VTasoo( buttonii);
+ }; */
+function VTaso(idje)
+{
+
+var koord = "";
+var koordd = "";
+for (var rivi=0;rivi<10;rivi++)
+{
+ 
+ for (var sar=0;sar<10;sar++)
+ {
+ 	koord = "p" + rivi + "," + sar;
+	koordd = rivi + "," + sar;
+	document.getElementById(koord).innerHTML = '<img src="Pohj.png">';
+ 	document.getElementById(koordd).innerHTML = '<img src="Pohj.png">';    
+ };
+ //document.getElementById("p2,2").src="PohjLL.png";
+};
+	var buttoni = idje.id;
+	//document.getElementById("BtEasy").removeEventListener("onclick", VTaso(this));
+	if (buttoni=="BtEasy"){vaikeus=1; document.getElementById("BtEasy").src="images/BtEasyUp.png"; document.getElementById("BtNormal").src="images/tyhja.png"; document.getElementById("BtHard").src="images/tyhja.png" ;};
+	if (buttoni=="BtNormal"){vaikeus=3; document.getElementById("BtEasy").src="images/BtNormalUp.png"; document.getElementById("BtEasy").src="images/tyhja.png"; document.getElementById("BtHard").src="images/tyhja.png" ;};
+	if (buttoni=="BtHard"){vaikeus=9; document.getElementById("BtEasy").src="images/BtHardUp.png"; document.getElementById("BtNormal").src="images/tyhja.png"; document.getElementById("BtEasy").src="images/tyhja.png" ;};
+	
+document.getElementById("bpelit").style= "outline-width:11px; outline-color: yellow; ";
+document.getElementById("bpelitt").style= "outline-color: #ff00ea; ";
+
+document.getElementById("BtEasy").id="BtEasyy";
+document.getElementById("BtNormal").id="BtNormall";
+document.getElementById("BtHard").id="BtHardd";
+
+document.getElementById( "BtEasyy" ).setAttribute( "onClick", "pelii()" );
+document.getElementById( "BtNormall" ).setAttribute( "onClick", "pelii()" );
+document.getElementById( "BtHardd" ).setAttribute( "onClick", "pelii()" );
+
+for (var rivi=0;rivi<10;rivi++)
+{
+ 
+ for (var sar=0;sar<10;sar++)
+ {
+ 	sis = "";
+	koord = rivi + "," + sar;
+		document.getElementById(koord).addEventListener("click", _listenerr, true);
+ };
+};
+	
+/*document.getElementById("BtEasy").src="images/InfoTauluHide.png";
+document.getElementById("BtNormal").src="images/tyhja.png";
+document.getElementById("BtHard").src="images/tyhja.png" ;  */
+
+//document.getElementById("bpelit").style= "outline-color: yellow;";	
+};
+// OMIEN LAIVOJEN ASETUS
+function asetusT(obj)
+
+{
+
+ kk=(obj.id);
+ r= (kk.charAt(0)); 
+ s= (kk.charAt(2));
+ r= Number(r);
+ s= Number(s);
+ 
+ rt=r-1
+ rtt=r+1
+ st=s-1
+ stt=s+1
+ 
+ if (rt<0){rt=0;} 
+ else if (st>9){st=9;} 
+ else if (rtt>9){rtt=9;} 
+ else if (stt>10){st=9;}
+ else{}
+ 
+if (koko==10){}
+ 		
+ else if (asepal==1 && Omataulu[r][s]=="1"){Omataulu[r][s]="2"; 
+ 		document.getElementById(obj.id).innerHTML = '<img src="PohjL.png">'; 
+		asepal=2; koko=koko+1}
+ 		
+ else if (asepal=2 && Omataulu[rt][s]=="2" || Omataulu[rtt][s]=="2" 
+			|| Omataulu[r][st]=="2" 
+			|| Omataulu[r][stt]=="2"){Omataulu[r][s]="2"; 
+					document.getElementById(obj.id).innerHTML = '<img src="PohjL.png" alt="'+koord+'">';
+					asepal="1"; koko=koko+1; Omataulu[r][s]="2";}
+												else if (koko==10){}
+														 		
+												else {} 
+	
+	if (koko==10){document.getElementById("bpelit").style= "outline-width:6px;outline-color: #06C;"; document.getElementById("bpelitt").style= "outline-width:11px; outline-color: yellow;"; gon();};				
+	
+}
+
+
+
+// GAME ON
+function gon()
+{
+/* var koord = "";
+var koordd = "";
+for (var rivi=0;rivi<10;rivi++)
+{
+ 
+ for (var sar=0;sar<10;sar++)
+ {
+ 	koord = "p" + rivi + "," + sar;
+	koordd = rivi + "," + sar;
+	document.getElementById(koord).innerHTML = '<img src="Pohj.png">';
+ 	document.getElementById(koordd).innerHTML = '<img src="Pohj.png">';    
+ };
+ //document.getElementById("p2,2").src="PohjLL.png";
+};  */
+document.getElementById("GameTShow").style.left = "264px";	 
+
+for (var rivi=0;rivi<10;rivi++)
+{
+ 
+ for (var sar=0;sar<10;sar++)
+ {
+ 	sis = "";
+	koord = "p" + rivi + "," + sar;
+		document.getElementById(koord).addEventListener("click", _listener, true);
+ };
+};
+
+//document.getElementById("bcBt").innerHTML = '<div id="bcBt"><img src=""  /></div>';
+//document.getElementById("bcBtt").innerHTML = '<div id="bcBtt"><img src=""  /></div>';
+document.getElementById("BtEasyy").title= "" ;
+document.getElementById("BtNormall").title= "" ;;
+document.getElementById("BtHardd").title= "" ;;
+document.getElementById("BtEasyy").src= "images/InfoTauluGameOn.png" ;
+document.getElementById("BtNormall").src = "images/InfoTauluBig.png";
+document.getElementById("BtHardd").src = "images/InfoTauluGameOnRight.png";
+ //var ooooo = 0;
+	document.getElementById("GameTShow").style.visibility = "initial";
+	/* document.getElementById("GameTShow").innerHTML = GTim;
+	var GTimme = GTim; */
+	ooooo = 0; hoo = 0; moo = 0; soo = 0;
+	SleepVar = setInterval(SleepTimerC, 10);
+	//var SleepVar = setInterval(SleepTimerC, 1000);
+}
+function SleepTimerC(){
+	
+	ooooo = ooooo + 1;
+	soo = soo + 1;
+	if (soo==100){soo=0; moo=moo+1}
+	if (moo==60){moo=0; hoo=hoo+1 };		
+    document.getElementById("GameTtShow").innerHTML = hoo + ":" ;
+	
+	if (moo<=9){document.getElementById("GameTttShow").innerHTML = "0" + moo + ":" ;} else {document.getElementById("GameTttShow").innerHTML = moo + ":" ;}
+	//document.getElementById("GameTttShow").innerHTML = moo + ":" ;
+	document.getElementById("GameTtttShow").innerHTML = soo;
+	
+}
+function InfoTaulut() 
+{
+document.getElementById(bcBt).innerHTML = '<img src="images/InfoTauluHide.png">';
+document.getElementById(bcBtt).innerHTML = '<img src="images/tyhja.png">';
+document.getElementById(bcBttt).innerHTML = '<img src="">';
+}
+
+function OveriPaalle(ob) { 
+	var Nappiii= ob.id;
+	//if (myAuto) {window.clearTimeout(myAuto);};mailover  shareBtnee   Resultimage
+	if (Nappiii=="NappiGInfo") {document.getElementById(Nappiii).style.cursor = "pointer"; };
+	if (Nappiii=="NappiMail") {document.getElementById(Nappiii).style.cursor = "pointer"; };
+	if (Nappiii=="BtEasy") {document.getElementById("BtEasy").src= "images/BtEasyUp.png" ;document.getElementById(Nappiii).style.cursor = "pointer"; };
+	if (Nappiii=="BtNormal") {document.getElementById("BtNormal").src = "images/BtNormalUp.png"; document.getElementById(Nappiii).style.cursor = "pointer"; };
+	if (Nappiii=="BtHard") {document.getElementById("BtHard").src = "images/BtHardUp.png"; document.getElementById(Nappiii).style.cursor = "pointer"; };
+	if (Nappiii=="Resultimage") {document.getElementById(Nappiii).style.cursor = "pointer"; };
+	if (Nappiii=="Resultimage") {document.getElementById(Nappiii).style.cursor = "pointer"; };
+	if (Nappiii=="shareBtnee") {document.getElementById(Nappiii).style.cursor = "pointer"; };
+	if (Nappiii=="mailover") {document.getElementById(Nappiii).style.cursor = "pointer"; }; 
+	if (Nappiii=="aboOBAP") {document.getElementById(Nappiii).style.cursor = "pointer"; };
+	if (Nappiii=="shareBtnee") {document.getElementById(Nappiii).style.cursor = "pointer"; };
+}
+function OutPaalle(ob) { 
+	var Nappiii= ob.id;
+	//if (myAuto) {window.clearTimeout(myAuto);};
+	//if (Nappiii=="NappiGInfo") {document.getElementById(Nappiii).style.cursor = "pointer"; };
+	if (Nappiii=="BtEasy") {document.getElementById("BtEasy").src= "images/BtEasy.png" ; };
+	if (Nappiii=="BtNormal") {document.getElementById("BtNormal").src = "images/BtNormal.png"; };
+	if (Nappiii=="BtHard") {document.getElementById("BtHard").src = "images/BtHard.png"; };
+}
+function OutPaallee(ob) { 
+	//tyhja
+}
+
+// INFO TAULU
+function GameInfo() 
+{
+document.getElementById("ResultT").style.visibility = "initial";
+document.getElementById("ResultBg").style.visibility = "initial";
+document.getElementById("cl").style.visibility = "initial";
+//document.getElementById("cl").style.visibility = "initial";
+//document.getElementById("ResultBg").addEventListener("click", TauluCl(), true);
+//document.getElementById("Resultimage").click="TauluCl()";
+document.getElementById( "ResultT" ).setAttribute( "onClick", "TauluCl();" );
+document.getElementById( "ResultBg" ).setAttribute( "onClick", "TauluCl();" ); 
+
+document.getElementById("Resultimage").src="images/TauluGameInfo.png"; 
+//document.getElementById("ResultBg").addEventListener("click", TauluCl());
+}
+// CPU VOITTO       GameInfo
+function CPUw()
+{ 
+uudestaan() ;
+}
+
+function pelii()
+// tyhja tyhja tyhja tyhja
+{}
+
+// PELIN KULKU
+function peliT(obje)
+{ klik=klik+1;
+if (koko<10){}
+
+kkk=(obje.id);
+rr= (kkk.charAt(1)); 
+ss= (kkk.charAt(3));
+rr= Number(rr);
+sr= Number(ss);
+
+   obje.id="p"+rr+","+sr
+	 if (OmaO==10){voitto="Ihminen ";
+	 		CPUw()}
+			else {};
+			
+	/*if (PcO==10){voitto="Tietokone ";
+	 		CPUw();}
+			else {};  */
+			
+	 if (Pctaulu[rr][sr]=="2"){OmaO=OmaO+1; vuoro="Ihm";
+	 document.getElementById(obje.id).innerHTML = '<img src="PohjO.png">'}
+	 
+	 else 
+	 {document.getElementById(obje.id).innerHTML = '<img src="PohjA.png">';
+	 vuoro="PC"; eee=uuu; ee=uu; PcpeliK(); } 
+		 
+	 if (OmaO==10){voitto="Ihminen ";
+	 		CPUw();};  
+}
+
+// CPU peli
+function Pcpeli() 
+{	 	
+iii=1
+uuu=3
+ccc=1
+klik=klik+1;
+ 
+PCr=parseInt(Math.random()*10);
+PCs=parseInt(Math.random()*10);
+level=parseInt(Math.random()*10);
+ 
+	OmaId=PCr +","+ PCs
+	//document.getElementById("infotaulu").innerHTML = OmaId+"  "+klik+"   "+PcO; 
+
+if (Omataulu[PCr][PCs]=="3"){PcpeliK();}; 			
+if (vuoro!=="PC"){}
+	else if (Omataulu[PCr][PCs]=="1"){for (cou=0;cou<vaikeus;){PCr=parseInt(Math.random()*10);
+	PCs=parseInt(Math.random()*10); level=parseInt(Math.random()*10); OmaId=PCr +","+ PCs; if (Omataulu[PCr][PCs]=="1"){cou=cou+1} else {cou=10;};}
+if (Omataulu[PCr][PCs]=="3"){PcpeliK();}
+	else if (Omataulu[PCr][PCs]=="1"){Omataulu[PCr][PCs]="3";  vuoro="Ihm"; 
+		 	 document.getElementById(OmaId).innerHTML = '<img src="PohjA.png">';}
+	else if (Omataulu[PCr][PCs]=="2" && PcO<9){Omataulu[PCr][PCs]="3"; PcO=PcO+1;  vuoro="PC";
+	 		 document.getElementById(OmaId).innerHTML = '<img src="PohjO.png">'; PcpeliK();} else {document.getElementById(OmaId).innerHTML = '<img src="PohjO.png">'; eee=(uuu+1);CPUw();};
+	}; 
+};
+
+function PcpeliK()
+{
+Pcpeli();	
+}
+
+// PELATAANKO UUDESTAAN??   document.getElementById("GameTShow").innerHTML = hoo + ":" +moo + ":" + soo;  TauluYouWin  BtHard
+function uudestaan()
+{
+//ee=uu; eee=uuu;
+//
+
+document.getElementById("ResultT").style.visibility = "initial";
+document.getElementById("ResultBg").style.visibility = "initial";
+document.getElementById("cl").style.visibility = "initial";
+
+
+if (OmaO==10 && ennatys<=ooooo){document.getElementById("ResultTime").style.visibility = "initial"; document.getElementById("Resultimage").src="images/TauluYouWin.png"; document.getElementById("ResultTime").innerHTML = hoo + ":" +moo + ":" + soo;} else if (OmaO==10 && ennatys>=ooooo){ennatys=ooooo; document.getElementById("ResultTime").style.visibility = "initial"; document.getElementById("Resultimage").src="images/TauluYouWinNewBest.png"; document.getElementById("ResultTime").innerHTML = hoo + ":" +moo + ":" + soo;} else {document.getElementById("Resultimage").src="images/TauluYouLosed.png";}
+
+clearInterval(SleepVar);
+/*if (ennatys<=ooooo){document.getElementById("ResultT").scr="image/TauluYouWin.png"; document.getElementById("ResultTime").innerHTML = hoo + "--" +moo + ":" + soo;} else {document.getElementById("ResultT").scr="image/TauluYouWinNexBest.png"; 
+
+document.getElementById("ResultTime").innerHTML =innerHTML = hoo + ":" +moo + ":" + soo;};  */
+
+   //<p>'+voitto+'voitti</p>
+
+// ooooo=0;
+
+}
+
+
+//TAULU CLOSE
+function TauluCl()
+{
+document.getElementById( "ResultT" ).setAttribute( "onClick", "uusiP();" );
+document.getElementById( "ResultBg" ).setAttribute( "onClick", "uusiP();" ); 
+	
+document.getElementById("ResultT").style.visibility = "hidden";
+document.getElementById("ResultBg").style.visibility = "hidden";	
+document.getElementById("cl").style.visibility = "hidden";
+}
+//MAIL SHOW
+function Infocls()
+{
+document.getElementById("InfoSender").style.visibility = "hidden";
+
+document.getElementById("InfoBg").style.visibility = "hidden";
+document.getElementById("cl").style.visibility = "hidden";
+}
+//MAIL CLOSE
+function Infoshw()
+{
+document.getElementById("InfoSender").style.visibility = "initial";
+
+document.getElementById("InfoBg").style.visibility = "initial";
+document.getElementById("cl").style.visibility = "initial";
+}
+//MAIL SHOW
+function Mailcls()
+{
+document.getElementById("MailSender").style.visibility = "hidden";
+document.getElementById("MailForm").style.visibility = "hidden";
+document.getElementById("MailBg").style.visibility = "hidden";
+document.getElementById("cl").style.visibility = "hidden";
+}
+//MAIL CLOSE
+function Mailshw()
+{
+document.getElementById("MailSender").style.visibility = "initial";
+document.getElementById("MailForm").style.visibility = "initial";
+document.getElementById("MailBg").style.visibility = "initial";
+document.getElementById("cl").style.visibility = "initial";
+}
+//PELIN RELOAD uudestaan 
+function uusiP()
+{
+/* koko=0;
+OmaO=0;
+PcO=0;
+g=0;
+lii=0; */
+document.getElementById("GameTShow").style.left = "-264px";
+	
+document.getElementById("BtEasyy").id="BtEasy";
+document.getElementById("BtNormall").id="BtNormal";
+document.getElementById("BtHardd").id="BtHard";
+
+document.getElementById("cl").style.visibility = "hidden";
+
+document.getElementById("BtEasy").title= "Easy level" ;
+document.getElementById("BtNormal").title= "Normal level" ;;
+document.getElementById("BtHard").title= "Hard level" ;;
+document.getElementById( "BtEasy" ).setAttribute( "onClick", "VTaso(this)" );
+document.getElementById( "BtNormal" ).setAttribute( "onClick", "VTaso(this)" );
+document.getElementById( "BtHard" ).setAttribute( "onClick", "VTaso(this)" )
+
+document.getElementById("bpelit").style= "outline-width:6px; outline-color: #06C; ";
+document.getElementById("bpelitt").style= "outline-width:6px; outline-color: #ff00ea; ";
+
+/* document.getElementById("BtEasy").onMouseOut="OutPaalle(this)"
+document.getElementById("BtNormal").onMouseOut="OutPaalle(this)"
+document.getElementById("BtHard").onMouseOut="OutPaalle(this)"   */
+
+for (var rivi=0;rivi<10;rivi++)
+{
+ 
+ for (var sar=0;sar<10;sar++)
+ {
+ 	sis = "";
+	koord = rivi + "," + sar;
+		document.getElementById(koord).removeEventListener("click", _listenerr, true);
+ };
+};
+
+for (var rivi=0;rivi<10;rivi++)
+{
+ 
+ for (var sar=0;sar<10;sar++)
+ {
+ 	sis = "";
+	koord = "p" + rivi + "," + sar;
+		document.getElementById(koord).removeEventListener("click", _listener, true);
+ };
+};
+
+q=0
+aprr=0
+aprs=0
+aprrr=0
+aprrs=0
+
+clearInterval(SleepVar);
+var soo = 0;
+var moo = 0;
+var hoo = 0; 
+var ooooo = 0;
+
+// Muuttujia
+
+klik=1;
+asepal=1
+koko=0
+gameon=0
+rt=0
+rtt=0
+st=0
+stt=0
+rr=0
+rs=0
+PcO=0
+OmaO=0
+lr=0
+ls=0
+ee=0
+eee=0
+uu=3
+uuu=3
+voitto=""
+vuoro="ihm" // pelin vuoro muuttuja
+OmaO=0 //Omatosumat
+PcO=0 //Pcosumat
+lii=0
+level=0
+
+
+Pohjust()
+
+}
+// MAIN OBAP LINK
+function abOBAP()
+{
+window.open("http://www.obap.info/") };
+
+
+</script>
+</head>
+ 
+<body  onLoad="PalaY">
+
+<div class="ocean">
+  <div class="wave"></div>
+  <div class="wave"></div>
+</div>
+
+<div id="bcnayttamo">             
+
+<div id="BtInfoSound"><img id="NappiMail" src="images/MailButton.png"  title="Sent message" onClick="Mailshw()" onMouseOver="OveriPaalle(this)" /><img src="images/tyhja.png" width="3px" /><img id="NappiGInfo" src="images/InfoButton.png"  title="How to play info" onClick="Infoshw()" onMouseOver="OveriPaalle(this)" /></div>
+	<div id="bcylat"></div>
+    
+    	<div id="GameTShow">
+        	<div id="GameTtShow"></div>
+            <div id="GameTttShow"></div>
+            <div id="GameTtttShow"></div>
+    	</div>
+        
+    <div id="bcnapit">
+    	<div id="bcBt"><img id="BtEasy" src="images/BtEasy.png"  title="Easy level" onClick="VTaso(this)" onMouseOver="OveriPaalle(this)" onMouseOut="OutPaalle(this)"/></div>
+        <div id="bcBtt"><img id="BtNormal"src="images/BtNormal.png"  title="Normal level" onClick="VTaso(this)" onMouseOver="OveriPaalle(this)" onMouseOut="OutPaalle(this)"/></div>
+        <div id="bcBttt"><img id="BtHard" src="images/BtHard.png" title="Hard level" onClick="VTaso(this)"onMouseOver="OveriPaalle(this)" onMouseOut="OutPaalle(this)"/></div>
+        <div id="GameTShow" style="text-align:center;" ></div>
+        </div>
+    
+<div id="bpelit">
+    <td width="250" valign="top"><table border="1">
+<script language="JavaScript" type="text/javascript">
+var koord = "";
+var sis = "";
+for (var rivi=0;rivi<10;rivi++)
+{
+ document.write("<tr>");
+ for (var sar=0;sar<10;sar++)
+ {
+ 	koord = rivi + "," + sar;
+	sis = '<img src="Pohj.png" alt="'+koord+'" height="28px" width="28px" >' ;
+ 	document.write('<td id="'+koord+'">'+sis+'</td>');
+ 	//document.getElementById(koord).addEventListener("click", function(){asetusT(this); });
+	 }
+document.write("</tr>");  
+}
+
+
+</script>
+</table></td>
+</div>
+
+<div id="bpelitt">
+    <td width="250" valign="top"><table id="pelion" border="1">
+<script language="JavaScript" type="text/javascript">
+var koord = "";
+var sis = "";
+for (var rivi=0;rivi<10;rivi++)
+{ var sis = "";
+ document.write("<tr>");
+ for (var sar=0;sar<10;sar++)
+ {
+ 	koord = "p" + rivi + "," + sar;
+	sis = '<img src="Pohj.png" alt="'+koord+'" height="28px" width="28px" >';
+ 	document.write('<td id="'+koord+'">'+sis+'</td>'); // document.write('<td id="'+koord+'" onclick="peliT(this);">'+sis+'</td>')
+	
+ };
+ document.write("</tr>");
+};  
+</script>
+
+	</table></td>
+</div>
+
+</div>
+
+<div id="infoP">
+<table >
+  <tr>
+    <td width="220" height="200" valign="top"><table width="220" height="80" border="0">
+      <tr>
+        <td width="150" valign="top" id="infotaulu"><p></p></td>
+        <td width="150" valign="top" id="infotaulu2"><p></p></td>
+      </tr>
+    </table></td>
+    <td width="100">&nbsp;</td>
+    </tr>
+</div>
+
+	<div id="ResultT"><img id="Resultimage" src="" onClick="uusiP()"  onMouseOver="OveriPaalle(this)"/><div id="ResultTime" style="text-align:center;"></div></div>
+<div id="ResultBg" onClick="uusiP()">X</div>
+
+</div>
+
+
+<div id="InfoBg" onClick="Infocls()"></div>
+<div id="InfoSender"  onClick="Infocls()"></div> 
+
+<div id="MailBg" onClick="Mailcls()"></div>
+<div id="MailSender"  onClick="Mailcls()"></div>
+
+<table id="MailForm" align="center">
+<form action="../contact.php" method="post" target="_blank">
+    <tr>
+    <td></td></tr>
+    <tr>
+    <th><p style="font-family:'TFont'; font-size:18px";></p></th></tr>
+    <tr>
+    <th><textarea name="email_content" style="line-height: 1.25; resize:none; font-family:'TFont'; font-size:14px"; cols=15 rows="7" placeholder="" ></textarea></th></tr>
+    <tr>
+    <th><p style="font-family:'TFont'; font-size:12px"; ></p></th></tr>
+    <tr>
+    <th><p style="font-family:'TFont'; font-size:12px"; ></p></th></tr>
+    <tr>
+    <th><p style="font-family:'TFont'; font-size:12px"></p></th></tr>
+ 	<tr>
+    <th><p style="font-family:'TFont'; font-size:12px"></p></th></tr>
+    <tr>
+    <th><textarea name="email_sender" style="height:34; resize:none; font-family:'TFont'; font-size:12px" cols=17 rows="1" placeholder="email or name:"></textarea></th></tr>
+     
+    <tr>
+    <th align="center">
+    <form action="?" method="POST">
+    <div id="html_element"></div>
+    <input type="image" name="submit" align="middle" src="images/Sent-Bt.png" value="Send it" onClick="Mailcls()"></th></tr> <!-- class="hyperlink" -->
+      </form></th></tr> <!-- class="hyperlink" -->
+      
+    <!--<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>  -->
+    <th><img src="images/tyhja.png" hight="2"></th></tr>
+    <tr>
+ 
+</form>
+</div>
+
+<div id="obap"><p style="text-align:right">rantatuoli@phnet.fi   2020 (C) obap.info</p></div>
+
+<div id="aboutObap">
+<img id="aboOBAP" title="Main" src="images/Button_obap_home.png" onClick="abOBAP()" onMouseOver="OveriPaalle(this)"></div>
+
+<div id="FbShare">
+<img id="shareBtnee" title="Share via Facebook" src="images/FB-Share-Bt.png" onMouseOver="OveriPaalle(this)"></div>
+
+<div id="Donate">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="2C9VGS3QPEH5U">
+<input type="image" src="images/Donate-Bt.png" title="Donate online via safe PayPal service" border="0" name="submit">
+ 
+</form>
+</div>
+
+<div id="cl" >x</div>
+
+<script>
+document.getElementById('shareBtnee').onclick = function (event) {
+      
+
+                var FBDesc     = 'Kuvaus';
+                var FBTitle     = 'Oleva Bitti Ambientti Projekti';
+				var FBTitleE 	= 'Ongoing Bit Ambient Project';
+                var FBLink      = 'http://www.obap.info';
+                var FBPic       = 'http://www.obap.info/FBshare/FBshareP5.png';
+
+var url="http://game.obap.info"; //Set desired URL here              <a href="http://www.obap.info"  target="_blank">
+var img="http://game.obap.info/FBsharePgame.png"; //Set Desired Image here   var totalurl=encodeURIComponent(url+'?img='+img);
+var totalurl=encodeURIComponent(url+'?img='+img);
+
+window.open ('http://www.facebook.com/sharer.php?u='+totalurl,'','width=600, height=600, scrollbars=yes, resizable=no');
+}
+
+</script>
+
+
+
+</body>
+
+</html>
